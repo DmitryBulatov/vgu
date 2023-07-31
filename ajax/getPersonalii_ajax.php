@@ -1,0 +1,111 @@
+<?
+require_once($_SERVER["DOCUMENT_ROOT"]."/bitrix/modules/main/include/prolog_before.php");
+//if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();
+/** @var array $arParams */
+/** @var CBitrixComponent $component */
+
+if(!empty($_POST["name"]))
+	$GLOBALS['arrPersonalii'] = ["name" => $_POST["name"]];
+if(!empty($_POST["check_post_name"]))
+	$GLOBALS['arrPersonalii'] = ["check_post_name" => $_POST["check_post_name"] ];
+if(!empty($_POST["check_subdiv_name"]))
+	$GLOBALS['arrPersonalii'] = ["check_subdiv_name" => $_POST["check_subdiv_name"] ];
+
+$__TEMPLATE = $APPLICATION->IncludeComponent(
+	"bitrix:news.list", 
+	"personalii_ajax_list", 
+	array(
+		"ACTIVE_DATE_FORMAT" => "d.m.Y",
+		"ADD_SECTIONS_CHAIN" => "Y",
+		"AJAX_MODE" => "Y",
+		"AJAX_OPTION_ADDITIONAL" => "",
+		"AJAX_OPTION_HISTORY" => "N",
+		"AJAX_OPTION_JUMP" => "N",
+		"AJAX_OPTION_STYLE" => "Y",
+		"CACHE_FILTER" => "N",
+		"CACHE_GROUPS" => "Y",
+		"CACHE_TIME" => "36000000",
+		"CACHE_TYPE" => "A",
+		"CHECK_DATES" => "Y",
+		"DETAIL_URL" => "",
+		"DISPLAY_BOTTOM_PAGER" => "Y",
+		"DISPLAY_DATE" => "Y",
+		"DISPLAY_NAME" => "Y",
+		"DISPLAY_PICTURE" => "Y",
+		"DISPLAY_PREVIEW_TEXT" => "Y",
+		"DISPLAY_TOP_PAGER" => "N",
+		"FIELD_CODE" => array(
+			0 => "",
+			1 => "ID",
+			2 => "CODE",
+			3 => "XML_ID",
+			4 => "NAME",
+			5 => "TAGS",
+			6 => "SORT",
+			7 => "PREVIEW_TEXT",
+			8 => "PREVIEW_PICTURE",
+			9 => "DETAIL_TEXT",
+			10 => "DETAIL_PICTURE",
+			11 => "DATE_ACTIVE_FROM",
+			12 => "ACTIVE_FROM",
+			13 => "DATE_ACTIVE_TO",
+			14 => "ACTIVE_TO",
+			15 => "SHOW_COUNTER",
+			16 => "SHOW_COUNTER_START",
+			17 => "IBLOCK_TYPE_ID",
+			18 => "IBLOCK_ID",
+			19 => "IBLOCK_CODE",
+			20 => "IBLOCK_NAME",
+			21 => "IBLOCK_EXTERNAL_ID",
+			22 => "DATE_CREATE",
+			23 => "CREATED_BY",
+			24 => "CREATED_USER_NAME",
+			25 => "TIMESTAMP_X",
+			26 => "MODIFIED_BY",
+			27 => "USER_NAME",
+			28 => "SECTION_ID",
+		),
+		"FILTER_NAME" => "arrPersonalii",
+		"HIDE_LINK_WHEN_NO_DETAIL" => "N",
+		"IBLOCK_ID" => "10",
+		"IBLOCK_TYPE" => "news",
+		"INCLUDE_IBLOCK_INTO_CHAIN" => "Y",
+		"INCLUDE_SUBSECTIONS" => "Y",
+		"MESSAGE_404" => "",
+		"NEWS_COUNT" => "550",
+		"PAGER_BASE_LINK_ENABLE" => "N",
+		"PAGER_DESC_NUMBERING" => "N",
+		"PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",
+		"PAGER_SHOW_ALL" => "N",
+		"PAGER_SHOW_ALWAYS" => "N",
+		"PAGER_TEMPLATE" => ".default",
+		"PAGER_TITLE" => "",
+		"PARENT_SECTION" => "",
+		"PARENT_SECTION_CODE" => "",
+		"PREVIEW_TRUNCATE_LEN" => "",
+		"PROPERTY_CODE" => array(
+			0 => "",
+			1 => "post_name",
+			2 => "post_description",
+			3 => "emale",
+			4 => "phone",
+			5 => "address",
+			6 => "TAG",
+			7 => "insignia",
+			8 => "",
+		),
+		"SET_BROWSER_TITLE" => "N",
+		"SET_LAST_MODIFIED" => "N",
+		"SET_META_DESCRIPTION" => "Y",
+		"SET_META_KEYWORDS" => "Y",
+		"SET_STATUS_404" => "N",
+		"SET_TITLE" => "N",
+		"SHOW_404" => "N",
+		"SORT_BY1" => "SORT",
+		"SORT_BY2" => "SORT",
+		"SORT_ORDER1" => "ASC",
+		"SORT_ORDER2" => "ASC",
+		"STRICT_SECTION_CHECK" => "N"
+	)
+);
+?>

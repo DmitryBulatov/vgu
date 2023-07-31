@@ -1,0 +1,1 @@
+<? PHPInterface\ComponentHelper::handle($this); ?>

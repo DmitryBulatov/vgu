@@ -1,0 +1,74 @@
+@mixin flex($flex-alignItems: flex-start, $flex-justifyContent: flex-start, $flex-flexWrap: nowrap, $flex-flexDirection: row) {
+  display: flex;
+  flex-direction: $flex-flexDirection;
+  align-items: $flex-alignItems;
+  justify-content: $flex-justifyContent;
+  flex-wrap: $flex-flexWrap;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Gilroy', sans-serif;
+  min-height: 100vh;
+  position: relative;
+  @include flex(center, space-between, nowrap, column);
+}
+
+a {
+  text-decoration: none;
+  outline: none;
+  color: inherit;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+input,
+textarea,
+select {
+  font-family: 'Gilroy', sans-serif;
+  box-shadow: none;
+}
+
+button {
+  border: none;
+  background: none;
+  font-family: 'Gilroy', sans-serif;
+  outline: none;
+  cursor: pointer;
+}
+
+
+.container {
+  width: 100%;
+  max-width: 1250px;
+  margin: 0 auto;
+  padding: 0 25px;
+
+  @media (max-width: 500px) {
+    padding: 0 20px;
+  }
+}
+
+
+.main {
+  width: 100%;
+  flex-grow: 1;
+}
+
+h2 {
+  font-weight: 800;
+  font-size: 45px;
+  line-height: 115%;
+  color: #0E1D37;
+
+  @media (max-width: 650px) {
+    font-size: 30px;
+  }
+}
